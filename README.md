@@ -41,6 +41,8 @@ Adults (20+) from the CDC's **National Health and Nutrition Examination Survey (
 | `height_in` | standing height, inches | `BMXHT` / 2.54 |
 | `survey_weight` | how many US adults each respondent represents | `WTMEC2YR` |
 
+**Known problem, fixed on load:** 118 rows in `heights.csv` have heights recorded in centimeters instead of inches (values of 147 or more). `load_heights()` converts any height above 100 inches back to inches and marks those rows with a `height_was_cm` column. The CSV itself is left as-is.
+
 **This copy has been modified for teaching purposes. Do not use it for research.** For real analyses, download the original files from the CDC.
 
 **A sample is not the population.** NHANES deliberately over-samples some groups; unweighted averages from this file are not US population estimates. That's what `survey_weight` is for.
