@@ -23,6 +23,7 @@ def main():
     print("Guess the height")
     print("----------------")
     print(f"Participants:            {len(df)}")
+    print(f"Heights converted from cm: {df['height_was_cm'].sum()}")
     print(f"Shortest person:         {heights.min():.1f} in")
     print(f"Tallest person:          {heights.max():.1f} in")
     print(f"Dial setting (our guess): {guess:.2f} in")
